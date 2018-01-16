@@ -35,6 +35,8 @@ for link in soup.find_all('img'):
         except OSError as e:
             if e.errno != errno.EEXIST:
                 raise
+        if(extension is None):
+            extension = ''
         with open(folderName+'/'+str(i)+extension, "wb") as f:
             f.write(r2.content)
             i = i + 1
